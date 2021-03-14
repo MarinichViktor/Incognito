@@ -1,0 +1,25 @@
+trikoder_oauth2:
+
+    authorization_server:
+        private_key: '%kernel.project_dir%/var/oauth/private.key'                     # Change this
+        private_key_passphrase: null                            # Passphrase of the private key, if any
+
+        encryption_key: '%env(string:OAUTH2_ENCRYPTION_KEY)%'   # (Optional) Change this
+        grant_types:
+            password:
+
+                # Whether to enable the password grant.
+                enable: true
+
+                # How long the issued access token should be valid for the password grant.
+                access_token_ttl: ~
+
+                # How long the issued refresh token should be valid for the password grant.
+                refresh_token_ttl: ~
+
+    resource_server:
+        public_key: '%kernel.project_dir%/var/oauth/public.key'                       # Change this
+
+    persistence:
+        doctrine: null
+#        in_memory: ~
