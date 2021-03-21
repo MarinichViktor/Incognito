@@ -24,6 +24,7 @@ class UserService implements UserServiceInterface
         $user->setPassword($encodedPassword);
 
         $this->repository->save($user);
+
         return $user;
     }
 }
